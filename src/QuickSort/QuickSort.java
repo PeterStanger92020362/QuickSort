@@ -1,5 +1,7 @@
 package QuickSort;
 
+import java.util.Scanner;
+
 public class QuickSort {
 
     public int[] numbers;
@@ -55,6 +57,34 @@ public class QuickSort {
         int temp = numbers[i];
         numbers[i] = numbers[j];
         numbers[j] = temp;
+    }
+
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Please enter a collection of integers:");
+
+        String input = sc.nextLine();
+
+        String[] inputArray = input.split("");
+        int[] myArray = new int[input.length()];
+
+        for(int i = 0;i < inputArray.length;i++)
+        {
+            myArray[i] = Integer.parseInt(inputArray[i]);
+        }
+
+
+        System.out.println("Passing to Quicksort method....");
+        QuickSort sorter = new QuickSort();
+        sorter.sort(myArray);
+
+        System.out.println("Here is the sorted collection:");
+        for (int each : myArray){
+            System.out.print(each);
+        }
+
     }
 
 }
